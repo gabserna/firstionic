@@ -8,6 +8,7 @@
 *.tmp.*
 UserInterfaceState.xcuserstate
 $RECYCLE.BIN/
+2021.zip
 
 *.log
 log.txt
