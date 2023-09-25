@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Notifications
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Notifications</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-button expand="full" color="danger" (click)="nowNotif()">Now</ion-button>
+  <ion-button expand="full" color="danger" (click)="futureNotif()">Later</ion-button>
+
+  <ion-item>
+    <ion-label>Message</ion-label>
+    <ion-input [(ngModel)]="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Rate</ion-label>
+    <ion-input [(ngModel)]="rate"></ion-input>
+  </ion-item>
+  <ion-button expand="full" color="danger" (click)="speak()">Speak!</ion-button>
+
+  <ion-item>
+    <ion-label>Badge Count</ion-label>
+    <ion-input [(ngModel)]="badgeCount"></ion-input>
+  </ion-item>
+  <ion-button expand="block" color="primary" (click)="setBadgeCount()">Set Badge Count</ion-button>
+  <ion-button expand="block" color="primary" (click)="clearBadgeCount()">Clear Badge Count</ion-button>
+
+</ion-content>

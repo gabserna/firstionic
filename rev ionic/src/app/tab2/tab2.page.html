@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Friends
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentModal()">
+        <ion-icon slot="icon-only" name="help-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Friends</ion-title>
+    </ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentModal()">
+        <ion-icon slot="icon-only" name="help-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-header>
+
+  <ion-searchbar [(ngModel)]="searchText" animated="true"></ion-searchbar>
+
+  <ion-list>
+    <ion-item button *ngFor="let person of peopleList | async" 
+        (click)="goToFriend(person)" [hidden]="!find(person)">
+      <ion-avatar slot="start">
+        <img [src]="person.avatar" alt="avatar">
+      </ion-avatar>
+      <ion-label>
+        {{ person.first_name }}
+        {{ person.last_name }},
+        {{ person.address.state }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

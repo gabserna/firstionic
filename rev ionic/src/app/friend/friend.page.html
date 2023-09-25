@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ person.first_name }} {{ person.last_name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-content class="friend-card">
+      <ion-img [src]="person.avatar" alt="avatar" class="person-avatar"></ion-img>
+      <h2>{{ person.first_name }} {{ person.last_name }}</h2>
+      <p>{{ person.username }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item [href]="'tel:' + person.phone_number">
+      {{ person.phone_number }}
+    </ion-item>
+    <ion-item [href]="'mailto:' + person.email">
+      {{ person.email }}
+    </ion-item>
+    <ion-item [href]="getGoogleHref(person.address)">
+      {{ person.address.street_address }}<br />
+      {{ person.address.city }},
+      {{ person.address.state }}
+      {{ person.address.zip_code }}<br />
+      {{ person.address.country }}<br />
+    </ion-item>
+  </ion-list>
+
+</ion-content>
